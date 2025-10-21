@@ -8,7 +8,7 @@ public class TryMain {
         int age = 0;
         while(true){
             System.out.print("Enter your age: ");
-            String text = sc.nextLine().trim();
+            String text = sc.nextLine().trim(); //ethan
             try {
                 age = Integer.parseInt(text);
                 System.out.println("Thanks! You Entered age = " + age);
