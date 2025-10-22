@@ -8,16 +8,15 @@ import java.util.Scanner;
 public class WriteOnce {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter the File name (e.g. students.txt): ");
+        System.out.println("Enter the File name (e.g. student.txt): ");
         String fileName = scan.nextLine().trim();
 
         System.out.println("Enter a name to save: ");
         String name = scan.nextLine().trim();
 
-        try {
-            PrintWriter out = new PrintWriter(new FileWriter(fileName, true));
-           out.println(name);
-           System.out.println("Saved to:  " + fileName);
+        try (PrintWriter out = new PrintWriter(new FileWriter(fileName, true))){
+            out.println(name);
+            System.out.println("Saved to:  " + fileName);
         }
         catch(IOException ex){
             System.out.println("Could not write to file: " + ex.getMessage());
