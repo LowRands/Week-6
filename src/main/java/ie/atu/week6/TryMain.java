@@ -15,7 +15,7 @@ public class TryMain {
                 break;
             }
             catch (NumberFormatException e){
-                System.out.println("Invalid input" + e.getMessage());
+                System.out.println("Invalid input " + e.getMessage());
             }
         }
     }
